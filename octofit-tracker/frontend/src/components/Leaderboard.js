@@ -8,8 +8,7 @@ function Leaderboard() {
   const fetchData = () => {
     setLoading(true);
     const codespace = process.env.REACT_APP_CODESPACE_NAME;
-    const base = codespace ? `https://${codespace}-8000.app.github.dev` : 'http://localhost:8000';
-    const endpoint = `${base}/api/leaderboard/`;
+    const endpoint = codespace ? `https://${codespace}-8000.app.github.dev/api/leaderboard/` : 'http://localhost:8000/api/leaderboard/';
     console.log('[Leaderboard] endpoint:', endpoint);
 
     fetch(endpoint)

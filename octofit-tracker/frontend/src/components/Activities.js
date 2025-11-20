@@ -8,8 +8,7 @@ function Activities() {
   const fetchData = () => {
     setLoading(true);
     const codespace = process.env.REACT_APP_CODESPACE_NAME;
-    const base = codespace ? `https://${codespace}-8000.app.github.dev` : 'http://localhost:8000';
-    const endpoint = `${base}/api/activities/`;
+    const endpoint = codespace ? `https://${codespace}-8000.app.github.dev/api/activities/` : 'http://localhost:8000/api/activities/';
     console.log('[Activities] endpoint:', endpoint);
 
     fetch(endpoint)

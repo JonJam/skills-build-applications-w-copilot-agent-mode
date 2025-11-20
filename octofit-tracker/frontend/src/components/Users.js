@@ -8,8 +8,7 @@ function Users() {
   const fetchData = () => {
     setLoading(true);
     const codespace = process.env.REACT_APP_CODESPACE_NAME;
-    const base = codespace ? `https://${codespace}-8000.app.github.dev` : 'http://localhost:8000';
-    const endpoint = `${base}/api/users/`;
+    const endpoint = codespace ? `https://${codespace}-8000.app.github.dev/api/users/` : 'http://localhost:8000/api/users/';
     console.log('[Users] endpoint:', endpoint);
 
     fetch(endpoint)
